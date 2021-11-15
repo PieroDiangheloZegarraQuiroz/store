@@ -1,0 +1,159 @@
+:root {
+  --primary: #131a22;
+  --ligth: #fff;
+  --grey: #efefef;
+}
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+body {
+  font-weight: 300;
+  color: var(--primary);
+  background-color: #10151b;
+}
+
+.menu a {
+  margin: 1.5rem 0;
+  color: #6f6184;
+  width: 100%;
+  align-items: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+.menu-active {
+  color: #6027dd !important;
+}
+
+.menu a:hover {
+  margin-left: 9px;
+  color: #6027dd;
+  /* font-size: 20px !important; */
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+#sidebar-container {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+#sidebar-container .logo {
+  padding: 0.875rem 1.25rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+}
+.icon-menu {
+  width: 2.2rem;
+  margin-right: 1.5rem;
+}
+
+#summary {
+  margin-top: 2rem;
+}
+
+#summary .container {
+  width: 90%;
+}
+
+.section-title {
+  margin-left: 10px;
+  color: #6027dd;
+  font-weight: bold;
+}
+
+.card-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.11);
+}
+
+.card-header,
+.card-footer {
+  font-weight: bold;
+}
+
+.card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-sales {
+  color: #35fe2c;
+}
+.card-expenses {
+  color: #ce296b;
+}
+.card-income {
+  color: #6027dd;
+}
+.card-body svg {
+  width: 50px;
+}
+
+#card {
+  background-color: #31363c;
+  color: #efefef;
+  border-radius: 1rem;
+}
+.col::after {
+  display: block;
+}
+.btn-icon {
+  width: 1.8rem;
+}
+
+.delete-icon {
+  color: #e96298;
+  transition: 0.5s;
+}
+.delete-icon:hover {
+  color: #ff009d !important;
+}
+
+/* --------------- Molal ---------------*/
+.modal-content {
+    background: var(--primary);
+    color: white;
+}
+.form-control {
+    background: #d7d9ff;
+    border: none;
+}
+.btn-primary {
+    background: #6027dd;
+    border: none;
+    box-shadow: -4px 7px 20px 0px #6027dd78;
+    transition: .5s;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus{
+    background: #5e15fc;
+    outline: none !important;
+    border: none;
+    box-shadow: none;
+}
+.btn-update {
+  background: #2770dd;
+  border: none;
+  box-shadow: -4px 7px 20px 0px #277cdd78;
+  transition: .5s;
+}
+.btn-update:hover, .btn-update:active, .btn-update:focus{
+  background: #0463a3;
+  outline: none !important;
+  border: none;
+  box-shadow: none;
+}
+.btn-delete{
+  background: #ce296b;
+  box-shadow: -4px 7px 20px 0px #e432796e;
+  transition: .5s;
+}

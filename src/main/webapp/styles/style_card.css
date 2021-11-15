@@ -1,0 +1,222 @@
+ .card{
+  right: 87%;
+}
+
+/* ------table card------ */
+.table-product {
+  width: 100vw;
+  height: 100vh;
+}
+
+.grid-container-card {
+  margin: 0 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: .25rem;
+  grid-template-areas:
+    "image quantity price subtotal remove";
+}
+
+.image { grid-area: image; }
+
+.name { grid-area: name; }
+
+.quantity {
+  grid-area: quantity;
+}
+
+.price { grid-area: price; }
+
+.subtotal {grid-area: subtotal;}
+
+.remove { grid-area: remove; }
+
+.text-card {
+  font-weight: 700;
+  color: #ffffff;
+}
+.text-card::after {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.field {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.field:nth-child(2){
+  display: none;
+}
+.field:last-child {
+  color:red;
+  position: relative;
+}
+.field:last-child::after {
+  content: '';
+  background:#bb41418f;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 1px 2px 12px 3px #d42626;
+}
+
+.add-card {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-purple);
+  font-weight: 700;
+  padding: 0.9em 0;
+  box-shadow: 0 -6px 32px #602ada54;
+}
+
+/* --- Pay form-container CREDIT CARD --- */
+.card-form-container {
+  position: absolute;
+  top: -150%;
+  /* opacity: 0; */
+  width: 100vw;
+  background: var(--color-darkBlue);
+  overflow: hidden;
+  transition: 900ms;
+}
+.view-form {
+  transform: translateY(108%);
+}
+.credit-card {
+  width: 19rem;
+  height: 11rem;
+  margin-left: 0.5em;
+  background: #1118272b;
+  border-radius: 1em;
+  backdrop-filter: blur(24px);
+  border: 1px solid #ffffff12;
+  font-size: .8em;
+  padding: 1em 2em;
+  position: relative;
+  z-index: 10;
+  box-shadow: 5px 6px 20px 0px #0000006b;
+}
+.info-card {
+  margin: 0.15em 0;
+}
+.chip { 
+  margin: 1em 0;
+}
+.card-form-container::before {
+  content: '';
+  position: absolute;
+  width: 19rem;
+  height: 11rem;
+  background: linear-gradient(140.54deg, #608D00 0%, #D30000 72.37%), linear-gradient(58.72deg, #0029FF 0%, #8FFF00 100%), radial-gradient(100% 164.72% at 100% 100%, #6100FF 0%, #00FF57 100%), radial-gradient(100% 148.07% at 0% 0%, #FFF500 0%, #51D500 100%);
+  background-blend-mode: color-dodge, overlay, difference, normal;
+  top: 12%;
+  left: 9%;
+  border-radius: 1em;
+}
+
+.form-card {
+  position: relative;
+  z-index: 20;
+  margin: 2rem 0 0 1em;
+}
+.form-field {
+  margin: .5em 0;
+  width: 92%;
+  position: relative;
+  text-align: center;
+}
+.input-text {
+  outline: none;
+  border: 1px solid white;
+  border-radius: .2rem;
+  background: transparent;
+  width: 100%;
+  font-size: 0.7em;
+  padding: 0.5rem;
+}
+.date {
+  display: flex;
+  gap: .4rem;
+}
+.date .input-text {
+  width: 4.5rem;
+}
+.date .input-text:first-child {
+  width: 9rem;
+}
+.date .input-text:last-child {
+  margin-left: 3.2rem;
+}
+#districts {
+  background: var(--color-darkBlue);
+}
+
+.btn-pay {
+  margin: .5rem 0 1.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: .5rem;
+  font-weight: 700;
+  color: rgb(112, 112, 112);
+}
+.active-pay {
+  color: #fff;
+  background: var(--color-gree);
+  box-shadow: -2px 9px 20px 0px #34ff2d8c;
+  text-shadow: none;
+  cursor: pointer;
+}
+/* ==== responsive 640px ====*/
+@media (min-width: 640px) {
+  .grid-container-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0;
+    grid-template-areas:
+      "image name quantity price subtotal remove";
+  } 
+  .field:nth-child(2){
+    display: flex;
+  }
+  .mobile-icon {
+    display: initial;
+  }
+  .credit-card {
+    margin-left: 7.5rem;
+  }
+  .card-form-container::before {
+    left: 22%;
+  }
+  /* .view-form{
+    transform: translateY(127%);
+  } */
+}
+@media (min-width: 1024px) {
+  .mobile-icon {
+    display: none;
+  }
+  .card-form-container {
+    position: inherit;
+    width: 50%;
+    border-radius: 1rem;
+    margin: 0 1rem 2rem 0;
+  }
+  .card-form-container::before {
+    left: 9%;
+  }
+  .credit-card {
+    margin-left: 1.5rem;
+  }
+  .date .input-text:last-child {
+    margin-left: 4.4rem;
+  }
+  .btn-pay {
+    width: 100%;
+  }
+}
