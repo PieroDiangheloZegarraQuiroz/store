@@ -100,20 +100,20 @@ public class EmployeeDAO implements Repostory<Employee> {
     private Employee createEmployee(ResultSet rs) throws SQLException {
         Employee e = new Employee();
         e.setIdEmployee(rs.getInt("idEmployee"));
-        e.setNames(rs.getString("name"));
-        e.setSurnames(rs.getString("surname"));
+        e.setNames(rs.getString("names"));
+        e.setSurnames(rs.getString("surnames"));
         e.setDocIdentity(rs.getInt("docIdentity"));
         e.setPhone(rs.getInt("phone"));
 
         Role role = new Role();
         role.setIdRole(rs.getInt("idRole"));
-        role.setName(rs.getString("nameR"));
+        role.setName(rs.getString("name"));
 
         User user = new User();
         user.setIdUser(rs.getInt("idUser"));
         user.setEmail(rs.getString("email"));
         user.setPassword(rs.getString("password"));
-        user.setFlagType(rs.getInt("flag"));
+        user.setFlagType(rs.getInt("flagType"));
 
         e.setRole(role);
         e.setUser(user);

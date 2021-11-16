@@ -94,4 +94,20 @@ public class Client {
     public void setDistrict(District district) {
         this.district = district;
     }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "idClient=" + idClient +
+                ", names='" + names + '\'' +
+                ", surnames='" + surnames + '\'' +
+                ", docIdentity=" + docIdentity +
+                ", address='" + address + '\'' +
+                ", phone=" + phone +
+                ", user=" + user +
+                ", department=" + department +
+                ", province=" + province +
+                ", district=" + district +
+                '}';
+    }
 }

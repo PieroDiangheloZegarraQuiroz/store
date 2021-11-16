@@ -40,4 +40,14 @@ public class User {
     public void setFlagType(int flagType) {
         this.flagType = flagType;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "idUser=" + idUser +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", flagType=" + flagType +
+                '}';
+    }
 }

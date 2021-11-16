@@ -67,4 +67,17 @@ public class Employee {
     public void setUser(User user) {
         this.user = user;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "idEmployee=" + idEmployee +
+                ", names='" + names + '\'' +
+                ", surnames='" + surnames + '\'' +
+                ", phone=" + phone +
+                ", docIdentity=" + docIdentity +
+                ", role=" + role +
+                ", user=" + user +
+                '}';
+    }
 }

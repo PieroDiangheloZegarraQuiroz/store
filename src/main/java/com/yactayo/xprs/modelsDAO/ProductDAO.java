@@ -61,7 +61,13 @@ public class ProductDAO implements Repostory<Product> {
 
     @Override
     public void delete(int id) {
-
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement("DELETE FROM product WHERE idProduct = ?")) {
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void updateStock(int idProduct, int stock) {

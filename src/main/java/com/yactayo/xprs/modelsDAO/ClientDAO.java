@@ -4,6 +4,7 @@ import com.yactayo.xprs.connectionDB.ConnectionDB;
 import com.yactayo.xprs.interfaces.Repostory;
 import com.yactayo.xprs.modelsDTO.Client;
 import com.yactayo.xprs.modelsDTO.District;
+import com.yactayo.xprs.modelsDTO.Province;
 import com.yactayo.xprs.modelsDTO.User;
 
 import java.sql.*;
@@ -22,9 +23,9 @@ public class ClientDAO implements Repostory<Client> {
 
         try (Connection conn = getConnection();
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT c.*,d.*, u.* FROM client AS c "
+             ResultSet rs = stmt.executeQuery("SELECT c.*, u.*, p.* FROM client AS c "
                      + "INNER JOIN user AS u ON (c.idUser = u.idUser)"
-                     + "INNER JOIN district AS d ON (c.idDistrict = d.idDistrict)")) {
+                     + "INNER JOIN province AS p ON (c.idProvince = p.idProvince)")) {
             while (rs.next()) {
                 Client c = createClient(rs);
                 clients.add(c);
@@ -118,8 +119,8 @@ public class ClientDAO implements Repostory<Client> {
     private Client createClient(ResultSet rs) throws SQLException {
         Client c = new Client();
         c.setIdClient(rs.getInt("idClient"));
-        c.setNames(rs.getString("name"));
-        c.setSurnames(rs.getString("surname"));
+        c.setNames(rs.getString("names"));
+        c.setSurnames(rs.getString("surnames"));
         c.setDocIdentity(rs.getInt("docIdentity"));
         c.setAddress(rs.getString("address"));
         c.setPhone(rs.getInt("phone"));
@@ -131,10 +132,15 @@ public class ClientDAO implements Repostory<Client> {
 
         District d = new District();
         d.setIdDistrict(rs.getInt("idDistrict"));
-        d.setName(rs.getString("nameD"));
+        d.setName(rs.getString("name"));
+
+        Province p = new Province();
+        p.setIdProvince(rs.getInt("idProvince"));
+        p.setName(rs.getString("name"));
 
         c.setUser(u);
         c.setDistrict(d);
+        c.setProvince(p);
 
         return c;
     }

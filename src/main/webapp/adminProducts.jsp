@@ -33,7 +33,7 @@
                     />
                 </svg>
                 <span class="d-none d-md-flex justify-content-center">
-                    VALOR NOMBRES
+                    ${surnameE}
                 </span>
             </a>
             <a href="#" class="d-flex">
@@ -125,21 +125,21 @@
             </tr>
             </thead>
             <tbody>
-            for
+            <c:forEach var="p" items="${products}">
                 <tr align="center">
-                    <td><img src="/Oficial/Assets/Images/url" alt="foto" width="50"/></td>
-                    <td>nombre</td>
-                    <td>stock</td>
-                    <td>precio</td>
-                    <td>marca</td>
-                    <td>categoria</td>
+                    <td><img src="/Oficial/Assets/Images/${p.getUrlPhoto()}" alt="foto" width="50"/></td>
+                    <td>${p.getName()}</td>
+                    <td>${p.getStock()}</td>
+                    <td>${p.getPrice()}</td>
+                    <td>${p.getBrand().getName()}</td>
+                    <td>${p.getCategory().getName()}</td>
                     <td>
-                        <a href="${pageContext.request.contextPath}/#"
+                        <a href="SAProducts?action=getData&idProduct=${p.getIdProduct()}"
                            class="btn btn-secondary" style="background-color:#6027dd">Editar
                         </a>
                     </td>
                 </tr>
-            ENDFOR
+            </c:forEach>
             </tbody>
         </table>
         <button

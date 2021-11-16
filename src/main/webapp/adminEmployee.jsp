@@ -33,7 +33,7 @@
                     />
                 </svg>
                 <span class="d-none d-md-flex justify-content-center">
-                    VALOR NOMBRES
+                    ${surnameE}
                 </span>
             </a>
             <a href="#" class="d-flex">
@@ -126,7 +126,7 @@
             </tr>
             </thead>
             <tbody>
-            FOR
+            <c:forEach var="em" items="${employees}">
             <tr align="center">
                 <!-- aqui iva id -->
                 <td>
@@ -135,20 +135,20 @@
                         <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                     </svg>
                 </td>
-                <td>ID</td>
-                <td>DNI</td>
-                <td>NAME</td>
-                <td>APELLIDOS</td>
-                <td>PHONE</td>
-                <td>ROL</td>
-                <td>CORREO</td>
+                <td>${em.getIdEmployee()}</td>
+                <td>${em.getDocIdentity()}</td>
+                <td>${em.getNames()}</td>
+                <td>${em.getSurnames()}</td>
+                <td>${em.getPhone()}</td>
+                <td>${em.getRole().getName()}</td>
+                <td>${em.getUser().getEmail()}</td>
                 <td>
                     <a href="${pageContext.request.contextPath}#"
                        class="btn btn-secondary" style="background-color:#6027dd">Editar
                     </a>  <!-- onclick="location.href = 'ControlEmpleados.jsp'" -->
                 </td>
             </tr>
-            ENDFOR
+            </c:forEach>
 
             </tbody>
         </table>

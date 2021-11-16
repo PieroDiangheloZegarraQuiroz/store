@@ -20,7 +20,7 @@
                           d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
                 <span class="d-none d-md-flex justify-content-center">
-                    VALOR NOMBRE
+                    ${surnameE}
                 </span>
             </a>
             <a href="#" class="d-flex ">
@@ -94,7 +94,7 @@
             </thead>
             <!-- table body -->
             <tbody>
-            FOR
+            <c:forEach var="c" items="${clients}">
                 <tr align="center">
                     <td>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -103,15 +103,15 @@
                         </svg>
                     </td>
                     <!-- aqui iva id -->
-                    <td>DNI</td>
-                    <td>NAME</td>
-                    <td>APELLIDO</td>
-                    <td>PROVINCIA</td>
-                    <td>DIRECCION</td>
-                    <td>TELE</td>
-                    <td>EMAIL</td>
+                    <td>${c.getDocIdentity()}</td>
+                    <td>${c.getNames()}</td>
+                    <td>${c.getSurnames()}</td>
+                    <td>${c.getProvince().getName()}</td>
+                    <td>${c.getAddress()}</td>
+                    <td>${c.getPhone()}</td>
+                    <td>${c.getUser().getEmail()}</td>
                 </tr>
-            ENDFOR
+            </c:forEach>
             </tbody>
         </table>
     </div>
