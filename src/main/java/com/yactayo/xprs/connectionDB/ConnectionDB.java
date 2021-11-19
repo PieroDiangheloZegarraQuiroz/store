@@ -28,7 +28,6 @@ public class ConnectionDB {
     }
 
     public static Connection getConnection() throws SQLException {
-        System.out.println("Conecatndo..");
         return getInstance().getConnection();
     }
 }
