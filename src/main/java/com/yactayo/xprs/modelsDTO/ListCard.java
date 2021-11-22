@@ -30,6 +30,7 @@ public class ListCard {
     public List<ItemCard> getItems() {
         return items;
     }
+
     public void getstockTotal() {
         for (int i = 0; i < items.size(); i++) {
             Product pr = new Product();
@@ -54,8 +55,8 @@ public class ListCard {
         return items.stream().mapToDouble(ItemCard::getSubtotal).sum();
     }
 
-    public void removeItem(int idProducto) {
-        items.removeIf(item -> item.getProduct().getIdProduct() == idProducto);
+    public void removeItem(int idProduct) {
+        items.removeIf(item -> item.getProduct().getIdProduct() == idProduct);
     }
 
 }

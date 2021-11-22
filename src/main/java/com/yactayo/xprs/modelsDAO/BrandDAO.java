@@ -4,6 +4,7 @@ import com.yactayo.xprs.connectionDB.ConnectionDB;
 import com.yactayo.xprs.interfaces.Repostory;
 import com.yactayo.xprs.modelsDTO.Brand;
 import com.yactayo.xprs.modelsDTO.Category;
+import com.yactayo.xprs.modelsDTO.Receipt;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -54,6 +55,7 @@ public class BrandDAO implements Repostory<Brand> {
         Brand b= new Brand();
         b.setIdBrand(rs.getInt("idBrand"));
         b.setName(rs.getString("name"));
+
         return b;
     }
 }

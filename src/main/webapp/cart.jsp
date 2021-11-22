@@ -32,7 +32,7 @@
                class="p-5 px-10 py-2 bg-purple-800 my-3 mx-5 rounded transform hover:scale-110 duration-700">Registro</a>
         </c:if>
         <c:if test="${validats}">
-            <a href="${pageContext.request.contextPath}/ServletUsuario?accion=editar&idCliente=${idCliente}"
+            <a href="#"
                class="flex px-8 py-2 bg-purple-800 my-3 mx-4 rounded hover:bg-purple-700">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-4" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">
@@ -130,7 +130,7 @@
             <h5 class="info-card">Mike Smith</h5>
         </div>
         <!-- form of credit card info-->
-        <form action="ServletPay" class="form-card" id="form-card" method="POST">
+        <form action="SPay" class="form-card" id="form-card" method="POST">
             <div class="form-field">
                 <input class="input-text" type="text" name="cardName" id="cardName" placeholder="Mike Smith" required>
             </div>
@@ -148,7 +148,7 @@
             <!-- FORM OF DELIVERY AND ADDRESS INFO -->
             <!-- Departments Valid -->
             <div class="form-field">
-                <label for="departmento" class="text-sm font-bold mx-1 my-5 text-left">Servicio de delivery disponible
+                <label for="department" class="text-sm font-bold mx-1 my-5 text-left">Servicio de delivery disponible
                     para:</label>
                 <select name="departamento" id="department" class="input-text" aria-readonly="true">
                     <option value="default">
@@ -167,7 +167,7 @@
             <!-- Districts valid -->
 
             <div class="form-field">
-                <select name="idDistrito" id="districts" class="input-text" required>
+                <select name="idDistrict" id="districts" class="input-text" required>
                     <option value="0">
                         Escoga su Distrito
                     </option>
@@ -190,7 +190,7 @@
             </div>
             <!--  Direction insert the user-->
             <div class="form-field">
-                <input type="text" name="direccion" id="direction" placeholder="Ingresa tu dirección aqui"
+                <input type="text" name="address" id="direction" placeholder="Ingresa tu dirección aqui"
                        maxlength="45" class="input-text" required>
             </div>
             <div class="form-field">

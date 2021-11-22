@@ -19,7 +19,7 @@ public class DetailReceiptDAO {
         return ConnectionDB.getConnection();
     }
 
-    public int getUltimo() {
+    public int getLast() {
         int id = 0;
 
         try (PreparedStatement stmt = getConnection().prepareStatement(SQL_getUltimo);
@@ -27,8 +27,8 @@ public class DetailReceiptDAO {
             if (resultSet.next()) {
                 id = resultSet.getInt("idReceipt");
             }
-
         } catch (Exception e) {
+            e.printStackTrace();
         }
         return id;
     }

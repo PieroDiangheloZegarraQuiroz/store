@@ -42,7 +42,7 @@ public class ClientDAO implements Repostory<Client> {
 
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.
-                     prepareStatement("SELECT c.*,d.*, u.* FROM client AS c "
+                     prepareStatement("SELECT c.*, d.*, u.* FROM client AS c "
                              + "INNER JOIN user AS u ON (c.idUser = u.idUser) "
                              + "INNER JOIN district AS d ON (c.idDistrict = d.idDistrict) WHERE c.idClient = ?")) {
             stmt.setInt(1, id);
@@ -114,6 +114,20 @@ public class ClientDAO implements Repostory<Client> {
         } catch (SQLException ignored) {
         }
         return client;
+    }
+
+    public void updateAddress(Client client) {
+        String sql = null;
+        sql = "UPDATE client SET address=?, idDistrict = ? WHERE idClient = ?";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, client.getAddress());
+            stmt.setInt(2, client.getDistrict().getIdDistrict());
+            stmt.setInt(3, client.getIdClient());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     private Client createClient(ResultSet rs) throws SQLException {

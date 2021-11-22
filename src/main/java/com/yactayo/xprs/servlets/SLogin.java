@@ -30,15 +30,24 @@ public class SLogin extends HttpServlet {
             throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action.equals("exit")) {
-            //request.getSession().setAttribute("actualizateHome", actualizate = false);
+            HttpSession session = request.getSession();
+            if (session.getAttribute("idEmployee") != null){
+                session.removeAttribute("idEmployee");
+            } else if(session.getAttribute("idClientHome") != null){
+                session.removeAttribute("idClientHome");
+            }
             request.getSession().setAttribute("validats", false);
-            request.getRequestDispatcher("/login.jsp").forward(request, response);
+            if (session.getAttribute("idEmployee") == null || session.getAttribute("idClient") == null){
+                session.invalidate();
+                request.getRequestDispatcher("/login.jsp").forward(request, response);
+            }
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
         String action = request.getParameter("action");
         if (action.equals("login")) {
             String email = request.getParameter("email");
@@ -47,22 +56,22 @@ public class SLogin extends HttpServlet {
             user.setPassword(password);
             boolean userExist = udao.validate(user);
             if (userExist) {
-                request.getSession().setAttribute("email", email);
-                request.getSession().setAttribute("password", password);
+                request.setAttribute("email", email);
+                request.setAttribute("password", password);
                 request.getSession().setAttribute("validats", true);
 
                 idUser = user.getIdUser();
                 int flag = user.getFlagType();
                 if (flag == 1) {
                     employee = edao.byId(idUser); //Remplazar por getIdUser
-                    request.getSession().setAttribute("idEmployee", employee.getIdEmployee());
+                    session.setAttribute("idEmployee", employee.getIdEmployee());
                     request.getSession().setAttribute("role", employee.getRole().getIdRole());
                     request.getSession().setAttribute("surnameE", employee.getSurnames());
                     request.getRequestDispatcher("/adminPage.jsp").forward(request, response);
                     //response.sendRedirect("SASummary?action=list");
                 } else {
                     client = cdao.getIdUser(idUser);
-                    request.getSession().setAttribute("idClientHome", client.getIdClient());
+                    request.getSession().setAttribute("idClient", client.getIdClient());
                     request.getSession().setAttribute("nameHome", client.getNames());
                     response.sendRedirect("SHome?action=list");
                 }

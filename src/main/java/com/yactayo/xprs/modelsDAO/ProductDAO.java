@@ -76,7 +76,7 @@ public class ProductDAO implements Repostory<Product> {
         int rows = 0;
         try {
             conn = ConnectionDB.getConnection();
-            stmt = conn.prepareStatement("UPDATE producto SET stock=? WHERE idProduct=?");
+            stmt = conn.prepareStatement("UPDATE product SET stock=? WHERE idProduct=?");
             stmt.setInt(1, stock);
             stmt.setInt(2, idProduct);
 
