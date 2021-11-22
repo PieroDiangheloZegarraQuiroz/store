@@ -138,7 +138,7 @@
                     </thead>
                     <!-- table body -->
                     <tbody>
-                    FOR
+                        <c:forEach var="detail" items="${detail}">
                         <tr>
                             <td>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
@@ -148,16 +148,16 @@
                                 </svg>
                             </td>
                             <!-- aqui iva id -->
-                            <td>IDDETALLERECIBO</td>
-                            <td>FECHACOMPRA</td>
-                            <td>IDEMPLEADO</td>
-                            <td>NOMBRESCLIENTE</td>
-                            <td>NOMBREPRODUCTO</td>
-                            <td>PRODUCTOPRECIO</td>
-                            <td>CANTIDAD</td>
-                            <td>S/TOTAL</td>
+                            <td>${detail.getIdDetailReceipt()}</td>
+                            <td>${detail.getReceipt.getIdpurchaseDate()}</td>
+                            <td>${detail.getReceipt.getIdEmployee()}</td>
+                            <td>${detail.getReceipt().getClient().getNames()} ${detail.getReceipt().getClient().getSurnames()}</td>
+                            <td>${detail.getProduct().getNames()}</td>
+                            <td>${detail.getProduct().getPrice()}</td>
+                            <td>${detail.getQuantity()}</td>
+                            <td>S/${detail.getQuantity().getTotal()}</td>
                         </tr>
-                    ENDFOR
+                        </c:forEach>
                     </tbody>
                 </table>
             </details>

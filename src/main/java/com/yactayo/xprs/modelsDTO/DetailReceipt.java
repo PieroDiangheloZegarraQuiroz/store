@@ -2,10 +2,12 @@ package com.yactayo.xprs.modelsDTO;
 
 public class DetailReceipt {
     private int idDetailReceipt;
-    private double price;
-    private int quantity;
     private Receipt receipt;
+    private double price;
     private Product product;
+    private int quantity;
+
+
 
 
     public DetailReceipt() {

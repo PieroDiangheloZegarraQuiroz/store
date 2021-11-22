@@ -7,6 +7,8 @@ public class Receipt {
     private Date purchaseDate;
     private Employee employee;
     private Client client;
+    private double total;//*
+
 
 
     public Receipt() {
@@ -43,4 +45,15 @@ public class Receipt {
     public void setClient(Client client) {
         this.client = client;
     }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+
+
 }
