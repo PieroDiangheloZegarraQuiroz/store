@@ -133,7 +133,7 @@
                         <th scope="col">Producto</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Cantidad</th>
-                        <th scope="col">Total</th>
+<%--                        <th scope="col">Total</th>--%>
                     </tr>
                     </thead>
                     <!-- table body -->
@@ -152,10 +152,10 @@
                             <td>${detail.getReceipt.getIdpurchaseDate()}</td>
                             <td>${detail.getReceipt.getIdEmployee()}</td>
                             <td>${detail.getReceipt().getClient().getNames()} ${detail.getReceipt().getClient().getSurnames()}</td>
-                            <td>${detail.getProduct().getNames()}</td>
+                            <td>${detail.getProduct().getName()}</td>
                             <td>${detail.getProduct().getPrice()}</td>
                             <td>${detail.getQuantity()}</td>
-                            <td>S/${detail.getQuantity().getTotal()}</td>
+<%--                        <td>S/${detail.getReceipt().getTotal()}</td>--%>
                         </tr>
                         </c:forEach>
                     </tbody>
