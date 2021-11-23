@@ -88,7 +88,7 @@ public class DetailReceiptDAO {
         Receipt r = new Receipt();
         r.setIdReceipt(rs.getInt("idReceipt"));
         r.setPurchaseDate(rs.getDate("purchaseDate"));
-        r.setTotal(rs.getDouble("total"));
+//        r.setTotal(rs.getDouble("total"));
 
         r.setClient(c);
 
