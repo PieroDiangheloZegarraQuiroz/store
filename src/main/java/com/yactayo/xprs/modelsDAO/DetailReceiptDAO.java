@@ -68,10 +68,9 @@ public class DetailReceiptDAO {
     }
 
     private DetailReceipt getDetailReceipt(ResultSet rs) throws SQLException {
-        // id|price|quantity|name|buy|delivery|name|total|
 
         DetailReceipt d = new DetailReceipt();
-        d.setIdDetailReceipt(rs.getInt("idDetailReceipt"));
+        d.setIdDetailReceipt(rs.getInt("details"));
         d.setQuantity(rs.getInt("quantity"));
 
 
@@ -86,11 +85,12 @@ public class DetailReceiptDAO {
         e.setNames(rs.getString("names"));
 
         Receipt r = new Receipt();
-        r.setIdReceipt(rs.getInt("idReceipt"));
+        r.setIdReceipt(rs.getInt("id"));
         r.setPurchaseDate(rs.getDate("purchaseDate"));
         r.setTotal(rs.getDouble("total"));
 
         r.setClient(c);
+        r.setEmployee(e);
 
         Product p = new Product();
         p.setIdProduct(rs.getInt("idProduct"));
@@ -102,7 +102,5 @@ public class DetailReceiptDAO {
 
         return d;
     }
-
-
 
 }

@@ -138,7 +138,7 @@
                     </thead>
                     <!-- table body -->
                     <tbody>
-                        <c:forEach var="detail" items="${detail}">
+                        <c:forEach var="details" items="${details}">
                         <tr>
                             <td>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
@@ -148,14 +148,14 @@
                                 </svg>
                             </td>
                             <!-- aqui iva id -->
-                            <td>${detail.getIdDetailReceipt()}</td>
-                            <td>${detail.getReceipt.getIdpurchaseDate()}</td>
-                            <td>${detail.getReceipt.getIdEmployee()}</td>
-                            <td>${detail.getReceipt().getClient().getNames()} ${detail.getReceipt().getClient().getSurnames()}</td>
-                            <td>${detail.getProduct().getNames()}</td>
-                            <td>${detail.getProduct().getPrice()}</td>
-                            <td>${detail.getQuantity()}</td>
-                            <td>S/${detail.getQuantity().getTotal()}</td>
+                            <td>${details.getIdDetailReceipt()}</td>
+                            <td>${details.getReceipt().getPurchaseDate()}</td>
+                            <td>${details.getReceipt().getEmployee().getIdEmployee()}</td>
+                            <td>${details.getReceipt().getClient().getNames()} ${details.getReceipt().getClient().getSurnames()}</td>
+                            <td>${details.getProduct().getName()}</td>
+                            <td>${details.getProduct().getPrice()}</td>
+                            <td>${details.getQuantity()}</td>
+                            <td>S/${details.getReceipt().getTotal()}</td>
                         </tr>
                         </c:forEach>
                     </tbody>

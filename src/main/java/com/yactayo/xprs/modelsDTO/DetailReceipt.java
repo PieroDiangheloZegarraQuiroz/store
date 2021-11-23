@@ -52,4 +52,15 @@ public class DetailReceipt {
     public void setProduct(Product product) {
         this.product = product;
     }
+
+    @Override
+    public String toString() {
+        return "DetailReceipt{" +
+                "idDetailReceipt=" + idDetailReceipt +
+                ", receipt=" + receipt +
+                ", price=" + price +
+                ", product=" + product +
+                ", quantity=" + quantity +
+                '}';
+    }
 }

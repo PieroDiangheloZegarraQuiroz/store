@@ -16,11 +16,6 @@ import java.util.List;
 
 public class SControllerHome extends HttpServlet {
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -29,23 +24,17 @@ public class SControllerHome extends HttpServlet {
 //        request.setAttribute("clientes", summary.getSummary(1));
 //        request.setAttribute("ingresos", summary.getIncome());
 
-        List<DetailReceipt> detail = new DetailReceiptDAO().list();
-
-        HttpSession sesion = request.getSession();
-        sesion.setAttribute("detail", detail);
-        System.out.println("detail = " + detail);
-        request.getRequestDispatcher("/adminPage.jsp").forward(request, response);
+//        List<DetailReceipt> details = new DetailReceiptDAO().list();
+//        HttpSession sesion = request.getSession();
+//        System.out.println("detail = " + details);
+//        sesion.setAttribute("details", details);
+//        request.getRequestDispatcher("/adminPage.jsp").forward(request, response);
+//        //response.sendRedirect("SControllerHome");
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
     }
-
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
 
 }

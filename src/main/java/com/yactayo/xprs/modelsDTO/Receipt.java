@@ -54,6 +54,14 @@ public class Receipt {
         this.total = total;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Receipt{" +
+                "idReceipt=" + idReceipt +
+                ", purchaseDate=" + purchaseDate +
+                ", employee=" + employee +
+                ", client=" + client +
+                ", total=" + total +
+                '}';
+    }
 }

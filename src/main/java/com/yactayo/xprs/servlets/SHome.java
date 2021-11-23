@@ -1,5 +1,6 @@
 package com.yactayo.xprs.servlets;
 
+import com.yactayo.xprs.modelsDAO.DetailReceiptDAO;
 import com.yactayo.xprs.modelsDAO.ProductDAO;
 import com.yactayo.xprs.modelsDTO.Product;
 import jakarta.servlet.*;
@@ -15,6 +16,7 @@ public class SHome extends HttpServlet {
 
     List<Product> products = new ArrayList<>();
     ProductDAO pdao = new ProductDAO();
+    DetailReceiptDAO rdao = new DetailReceiptDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
