@@ -10,7 +10,8 @@
 </head>
 <body>
 <!-- init header -->
-<header class="main-header flex justify-evenly sm:justify-between container mx-auto" id="navbar">
+<img src="img/fondo1.png" style="position: absolute;z-index: -10000;width: 86%;height: 100vh;margin-top: 10vh;">
+<header class="main-header flex justify-evenly sm:justify-between container mx-auto" id="navbar" style="border-bottom: #7960CE 5px solid">
     <nav class="flex items-center w-6/12 justify-evenly sm:justify-between nav-header">
         <img src="assets/image/logo2.png" alt="logo" width="60">
         <a href="SHome?action=list" class="hover:text-purple-800 duration-700 transform scale-90 un-active">Principal</a>
@@ -29,7 +30,7 @@
             <a href="login.jsp"
                class="px-10 py-2 border my-3 mx-5 rounded hover:border-purple-700 hover:text-purple-800 duration-700 transform hover:scale-90">Login</a>
             <a href="register.jsp"
-               class="p-5 px-10 py-2 bg-purple-800 my-3 mx-5 rounded transform hover:scale-110 duration-700">Registro</a>
+               class="px-10 py-2 border my-3 mx-5 rounded hover:border-purple-700 hover:text-purple-800 duration-700 transform hover:scale-90">Registro</a>
         </c:if>
         <c:if test="${validats}">
             <a href="#"
@@ -78,12 +79,12 @@
     <section class="table-product">
         <!-- table header  -->
         <div class="grid-container-card">
-            <div class="field text-xs md:text-sm text-card image">Imagen</div>
-            <div class="field text-xs md:text-sm text-card name">Nombre</div>
-            <div class="field text-xs md:text-sm text-card quantity">Cantidad</div>
-            <div class="field text-xs md:text-sm text-card price">Precio</div>
-            <div class="field text-xs md:text-sm text-card subtotal">Subtotal</div>
-            <div class="field text-xs md:text-sm text-card remove">Eliminar</div>
+            <div class="field text-xs md:text-sm text-card image" style="color: #333">Imagen</div>
+            <div class="field text-xs md:text-sm text-card name" style="color: #333">Nombre</div>
+            <div class="field text-xs md:text-sm text-card quantity" style="color: #333">Cantidad</div>
+            <div class="field text-xs md:text-sm text-card price" style="color: #333">Precio</div>
+            <div class="field text-xs md:text-sm text-card subtotal" style="color: #333">Subtotal</div>
+            <div class="field text-xs md:text-sm text-card remove" style="color: #333">Eliminar</div>
         </div>
         <!-- row of products -->
         <c:forEach var="itemCard" items="${cardInfos}">
@@ -114,10 +115,10 @@
     <!-- Form for credit card and Address -->
     <section class="card-form-container" id="open-card">
         <c:set var="itemCard" value="${cardTotal}"/>
-        <h1 class="text-sm text-base lg:text-lg ml-6 lg:ml-10 my-6 text-center sm:text-left">Total a pagar <span
+        <h1 class="text-sm text-base lg:text-lg ml-6 lg:ml-10 my-6 text-center sm:text-left" style="color: white">Total a pagar<span
                 class="ml-10">S/${itemCard}0</span></h1>
-        <div class="credit-card">
-            <h5 class="info-card">Mastercard.</h5>
+        <div class="credit-card" style="color: white">
+            <h5 class="info-card">Mastercard</h5>
             <div class="chip">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">

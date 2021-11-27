@@ -10,6 +10,7 @@
     <title>Home</title>
 </head>
 <body>
+<img src="img/fondo1.png" style="position: absolute;z-index: -10000;width: 86%;height: 90%;margin-top: 10vh;">
 <div class="container-fluid row">
     <div id="sidebar-container" class="bg-primary col-3">
         <div class="menu align-items-md-start">
@@ -23,7 +24,7 @@
                     ${surnameE}
                 </span>
             </a>
-            <a href="#" class="d-flex menu-active">
+            <a href="adminPage.jsp" class="d-flex menu-active">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -33,7 +34,7 @@
                             Inicio
                         </span>
             </a>
-            <a href="#" class="d-flex">
+            <a href="SAClients?action=list" class="d-flex">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" fill="none" viewBox="0 0 16 16"
                      stroke="currentColor">
                     <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -43,7 +44,7 @@
                             Clientes
                         </span>
             </a>
-            <a href="#" class="d-flex">
+            <a href="SAProducts?action=list" class="d-flex">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -53,7 +54,7 @@
                             Productos
                         </span>
             </a>
-            <a href="#" class="d-flex ">
+            <a href="SAEmployees?action=list" class="d-flex ">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" fill="none" width="30" height="30"
                      viewBox="0 0 16 16" stroke="currentColor">
                     <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
@@ -62,7 +63,17 @@
                             Empleados
                         </span>
             </a>
-            <a href="#" class="d-flex">
+            <a href="adminChat.jsp" class="d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+                </svg>
+                <span class="d-none d-md-flex ">
+                            Soporte al Cliente
+                        </span>
+            </a>
+            <a href="SHome?action=list" class="d-flex">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

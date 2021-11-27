@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-<header class="main-header flex justify-evenly sm:justify-between container mx-auto" id="navbar">
+<header class="main-header flex justify-evenly sm:justify-between container mx-auto" id="navbar" style="border-bottom: 5px solid #7960CE">
     <nav class="flex items-center w-6/12 justify-evenly sm:justify-between nav-header">
         <img src="assets/image/logo2.png" alt="logo" width="60">
         <a href="SHome?action=list" class="hover:text-purple-800 duration-700 transform scale-90 un-active">Principal</a>
@@ -28,7 +28,7 @@
         <c:set var="validats"  value="${validats}"/>
         <c:if test="${!validats}">
             <a href="login.jsp" class="px-10 py-2 border my-3 mx-5 rounded hover:border-purple-700 hover:text-purple-800 duration-700 transform hover:scale-90">Login</a>
-            <a href="register.jsp" class="p-5 px-10 py-2 bg-purple-800 my-3 mx-5 rounded transform hover:scale-110 duration-700">Registro</a>
+            <a href="register.jsp" class="px-10 py-2 border my-3 mx-5 rounded hover:border-purple-700 hover:text-purple-800 duration-700 transform hover:scale-90">Registro</a>
         </c:if>
         <c:if test="${validats}">
             <a href="${pageContext.request.contextPath}/ServletUsuario?accion=editar&idCliente=${idCliente}" class="flex px-8 py-2 bg-purple-800 my-3 mx-4 rounded hover:bg-purple-700" href="idCliente=${idCliente}&direccion=${direccion}&idDistrito=${idDistrito}">

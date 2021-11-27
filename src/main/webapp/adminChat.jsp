@@ -2,16 +2,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="styles/styles.css"/>
-    <title>Products</title>
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Home</title>
 </head>
 <body>
+<img src="img/fondo1.png" style="position: absolute;z-index: -10000;width: 86%;height: 90%;margin-top: 10vh;">
 <div class="container-fluid row">
-    <!-- Sidebar Product-->
     <div id="sidebar-container" class="bg-primary col-3">
         <div class="menu align-items-md-start">
             <a href="#" class="d-flex d-md-block text-center">
@@ -20,11 +22,11 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                           d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <span class="d-none d-md-flex justify-content-center">
-                    VALOR NOMBRE
+                <span class="d-none d-md-flex justify-content-center" value="${surnameE}">
+
                 </span>
             </a>
-            <a href="adminPage.jsp" class="d-flex ">
+            <a href="adminPage.jsp" class="d-flex menu-active">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -63,6 +65,16 @@
                             Empleados
                         </span>
             </a>
+            <a href="adminChat.jsp" class="d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" fill="none" viewBox="0 0 24 24"
+                     stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+                </svg>
+                <span class="d-none d-md-flex ">
+                            Soporte al Cliente
+                        </span>
+            </a>
             <a href="SHome?action=list" class="d-flex">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">
@@ -75,47 +87,39 @@
             </a>
         </div>
     </div>
-
-    <!-- summary -->
+    <!-- Summary -->
     <div id="summary" class="col-9">
-        <h2 style="color: #6027dd;font-weight: bold;">Productos Auditoria</h2>
-        <a href=""></a>
-        <table id="table" class="table text-light">
-            <thead>
-            <tr align="center">
-                <th scope="col">Fecha</th>
-                <th scope="col">Evento</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Nuevo Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Nuevo Precio</th>
-                <th scope="col">Stock</th>
-                <th scope="col">Nuevo Stock</th>
-                <th scope="col">Autor</th>
-            </tr>
-            </thead>
-            <tbody>
-            FOR
-                <tr align="center">
-                    <td>${auditProduct.fecha}</td>
-                    <td>${auditProduct.evento}</td>
-                    <td>${auditProduct.nombre}</td>
-                    <td>${auditProduct.nuevoNombre}</td>
-                    <td>${auditProduct.precio}</td>
-                    <td>${auditProduct.nuevoPrecio}</td>
-                    <td>${auditProduct.stock}</td>
-                    <td>${auditProduct.nuevoStock}</td>
-                    <td>${auditProduct.autor}</td>
-                </tr>
-            ENDFOR
-            </tbody>
-        </table>
-    </div>
-</div>
+        <div id="chat-content">
+            <!--CHATHEADER-->
+            <div class="chat-header">
+                <h1>Soporte al Cliente</h1>
+            </div>
+            <!--CHAT-MESSAGES-->
+            <div>
+                <div id="conversacion">
 
-<!--Script bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+                </div>
+                <!--CHATFOOTER-->
+                <div class="chat-footer">
+                    <div class="input">
+                        <input type="text" id="user" placeholder=" Por favor Iniciar Sesion" readonly value="${surnameE}">
+                    </div>
+                    <div class="input">
+                        <input id="mensaje" placeholder=" ">
+                    </div>
+                    <div style="justify-content: center;align-items: center;display: flex;">
+                        <button id="btnEnviar"><box-icon type='solid' name='right-arrow'></box-icon></button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/chat.js"></script>
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
 </body>
 </html>
+
