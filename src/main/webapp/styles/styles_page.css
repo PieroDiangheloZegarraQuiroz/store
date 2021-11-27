@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700;900&display=swap');
 :root {
     /* --- colors of projects --- */
-    --color-background: #000104;
+    --color-background: aliceblue;
     --color-darkBlue: #10151B;
-    --color-purple: #602ADA;
-    --color-lightPurple: rgba(96 , 42, 218, 0.10);
+    --color-purple: #7960CE;
+    --color-lightPurple: #9B60CE;
     --color-white: #EFEFEF;
     --color-lightWhite: rgba(239, 239, 239, 0.75);
     --color-pink: #CB2B6A;
@@ -21,7 +21,7 @@
 }
 body {
     background: var(--color-background);
-    color: var(--color-white);
+    color: #333 !important;
 }
 /* === Navbar === */
 .main-header {
@@ -127,7 +127,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    background: var(--color-white);
+    background: var(--color-purple);
     border-radius: 1.3em .7em 1.3em 0;
     box-shadow: -7px 6px 20px 2px #00000042;
     transition: .5s;
@@ -160,8 +160,10 @@ body {
 .swiper-slide {
     background-position: center;
     background-size: cover;
-    width: 300px;
-    height: 300px;
+    width: 240px;
+    height: 320px;
+    border-radius: 10px;
+    background-color: rgba(51, 51, 51, 0.38);
 }
 
 .swiper-slide img {
@@ -257,7 +259,7 @@ body {
 
 /* == section of categories == */
 .category-title {
-    color: #fff;
+    color: #333;
     font-weight: 700;
     margin: 2em 1.6em;
 }
@@ -454,6 +456,7 @@ body {
         justify-content: flex-end !important;
     }
 }
+
 /*--- desktop view ---*/
 @media (min-width: 1024px) {
     .grid-description {

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700;900&display=swap');
 :root {
   /* --- colors of projects --- */
-  --color-background: #000104;
+  --color-background: aliceblue;
   --color-darkBlue: #10151B;
   --color-purple: #602ADA;
   --color-lightPurple: rgba(96 , 42, 218, 0.10);
@@ -37,6 +37,7 @@ body{
 }
 .tittle {
   display: none;
+  background-color: #7960CE;
 }
 .tittle-text {
   font-weight: 900;
@@ -87,7 +88,7 @@ body{
   color: transparent;
 }
 .container {
-  background: var(--color-darkBlue);
+  background: var(--color-background);
   height: inherit;
   width: inherit;
   padding: 2em;
@@ -108,6 +109,7 @@ body{
   margin-bottom: .1em;
   font-weight: 700;
   font-size: .75em;
+  color: #333;
 }
 .privacity {
   display: flex;

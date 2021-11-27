@@ -81,7 +81,7 @@
   top: -150%;
   /* opacity: 0; */
   width: 100vw;
-  background: var(--color-darkBlue);
+  background: var(--color-lightPurple);
   overflow: hidden;
   transition: 900ms;
 }

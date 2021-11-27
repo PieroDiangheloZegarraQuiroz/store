@@ -1,7 +1,8 @@
 :root {
-  --primary: #131a22;
-  --ligth: #fff;
-  --grey: #efefef;
+  --primary: aliceblue;
+  --color-purple: #7960CE;
+  --color-lightPurple: #9B60CE;
+  --dark:#333;
 }
 .bg-primary {
   background-color: var(--primary) !important;
@@ -9,8 +10,8 @@
 
 body {
   font-weight: 300;
-  color: var(--primary);
-  background-color: #10151b;
+  color: var(--dark);
+  background-color: var(--primary);
 }
 
 .menu a {
@@ -39,6 +40,8 @@ body {
   height: 100vh;
   position: sticky;
   top: 0;
+  background-color: var(--primary);
+  border-right: 5px solid var(--color-purple);
 }
 #sidebar-container .logo {
   padding: 0.875rem 1.25rem;
@@ -156,4 +159,58 @@ body {
   background: #ce296b;
   box-shadow: -4px 7px 20px 0px #e432796e;
   transition: .5s;
+}
+
+.chat-content{
+  background-color: transparent;
+  display: block;
+  transition: 0.2s all ease-in-out;
+}
+
+.chat-header{
+  background: linear-gradient(90deg, rgba(121,96,206,1) 24%, rgba(155,96,206,1) 78%);
+  border-radius: 20px 20px 0px 0px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 20px;
+  text-shadow: 0px 0px 20px white;
+}
+
+#conversacion{
+  height: 600px;
+  padding: 8px;
+  text-align: left;
+  background-color: aliceblue;
+  overflow-y: auto;
+}
+
+chat-footer{
+  display: block;
+  float: left;
+  width: 95%;
+}
+#user,#mensaje{
+  float: left;
+  text-align: center;
+  border-style: none;
+  border: 3px solid #7960CE;
+  width: 80%;
+  margin-left: 10px;
+  height: 40px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  outline: inherit;
+  outline: none;
+}
+
+#btnEnviar{
+  float: right;
+  width: 70px;
+  height: 70px;
+  border-radius: 80px;
+  margin-left: 5px;
+  background-color: #7960CE;
 }

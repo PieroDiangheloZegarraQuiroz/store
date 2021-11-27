@@ -30,14 +30,14 @@
 
 <!-- init logo text -->
 <section class="tittle">
-    <span class="tittle-text">X-PRSS</span>
-    <span class="tittle-text">NOVA</span>
+    <span class="tittle-text">G-BUNDLE</span>
+    <span class="tittle-text" style="font-size: 20px">COMMERCE</span>
 </section>
 <!-- init form container -->
 <section class="container">
     <!-- init title of form -->
     <section class="form-container">
-        <h2 class="title-sign" id="title">Iniciar Sesión NOVA</h2>
+        <h2 class="title-sign" id="title">Iniciar Sesión</h2>
 
         <!-- init form register -->
         <form action="SLogin" method="post">
