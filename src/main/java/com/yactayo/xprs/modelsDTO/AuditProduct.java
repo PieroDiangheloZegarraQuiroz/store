@@ -1,5 +1,4 @@
 package com.yactayo.xprs.modelsDTO;
-
 import java.util.Date;
 
 public class AuditProduct {
@@ -17,7 +16,17 @@ public class AuditProduct {
     private int stockNew;
     private String author;
 
-    public AuditProduct() {
+    public AuditProduct(Date date, String event, String nameOld, String newName, double priceOld, double priceNew, int stockOld, int stockNew, String author) {
+
+        this.date = date;
+        this.event = event;
+        this.nameOld = nameOld;
+        this.newName = newName;
+        this.priceOld = priceOld;
+        this.priceNew = priceNew;
+        this.stockOld = stockOld;
+        this.stockNew = stockNew;
+        this.author = author;
     }
 
     public int getIdAudiProduct() {
@@ -115,4 +124,5 @@ public class AuditProduct {
     public void setAuthor(String author) {
         this.author = author;
     }
+
 }
