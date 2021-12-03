@@ -67,8 +67,8 @@ public class SLogin extends HttpServlet {
                     session.setAttribute("idEmployee", employee.getIdEmployee());
                     request.getSession().setAttribute("role", employee.getRole().getIdRole());
                     request.getSession().setAttribute("surnameE", employee.getSurnames());
-                    request.getRequestDispatcher("/adminPage.jsp").forward(request, response);
-                    //response.sendRedirect("SASummary?action=list");
+                    //request.getRequestDispatcher("/adminPage.jsp").forward(request, response);
+                    response.sendRedirect("SControllerHome");
                 } else {
                     client = cdao.getIdUser(idUser);
                     request.getSession().setAttribute("idClient", client.getIdClient());

@@ -10,7 +10,7 @@ public class ConnectionDB {
     private final static String url = "jdbc:mysql://localhost:3306/xprs?useSSL=false&"
             + "useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     private final static String username = "root";
-    private final static String password = "root";
+    private final static String password = "sebas2001";
     private static BasicDataSource pool;
 
     public static BasicDataSource getInstance() throws SQLException {
