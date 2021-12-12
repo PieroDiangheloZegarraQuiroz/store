@@ -10,7 +10,6 @@
 </head>
 <body>
 <!-- init header -->
-<img src="img/fondo1.png" style="position: absolute;z-index: -10000;width: 86%;height: 100vh;margin-top: 10vh;">
 <header class="main-header flex justify-evenly sm:justify-between container mx-auto" id="navbar" style="border-bottom: #7960CE 5px solid">
     <nav class="flex items-center w-6/12 justify-evenly sm:justify-between nav-header">
         <img src="assets/image/logo2.png" alt="logo" width="60">
@@ -34,7 +33,7 @@
         </c:if>
         <c:if test="${validats}">
             <a href="#"
-               class="flex px-8 py-2 bg-purple-800 my-3 mx-4 rounded hover:bg-purple-700">
+               class="px-10 py-2 border my-3 mx-5 rounded hover:border-purple-700 hover:text-purple-800 duration-700 transform hover:scale-90">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-4" fill="none" viewBox="0 0 24 24"
                      stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

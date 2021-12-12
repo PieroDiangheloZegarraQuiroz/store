@@ -205,7 +205,7 @@
     <div id="chat-content">
         <!--CHATHEADER-->
         <div class="chat-header">
-            <h1>Soporte al Cliente</h1>
+            <button onclick="popupToggle()" style="display: flex;align-items: center;justify-content: center;outline: none;border-style: none;"><box-icon name='left-arrow-alt' size="md" color="white"></box-icon></button><h1>Soporte al Cliente</h1>
         </div>
         <!--CHAT-MESSAGES-->
         <div>
